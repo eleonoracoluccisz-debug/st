@@ -1,0 +1,13 @@
+{
+  "name": "checkout-curso-digital-blackcat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Checkout PIX responsivo integrado a API BlackCat.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
